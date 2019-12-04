@@ -359,8 +359,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ef7b51ababa4b84db22d3754c7a80d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfZones: 60
-  moveAmount: 10
+  numberOfZones: 10
+  moveAmount: 30
   parent: {fileID: 712883775}
   startZones:
   - {fileID: 4344314098061045762, guid: 5b6377b8d3743ef4098950fdf393f56b, type: 3}

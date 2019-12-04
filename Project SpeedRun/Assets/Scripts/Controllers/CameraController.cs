@@ -32,17 +32,31 @@ public class CameraController : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
+        DontDestroyOnLoad(this);
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    public void Start()
     {
         //Finds our target, the player, if our target is null
         if (target == null)
         {
             target = PlayerManager.instance.player.transform;
         }
+    }
 
+    public void Update()
+    {        
+        //Finds our target, the player, if our target is null
+        if (target == null)
+        {
+            target = PlayerManager.instance.player.transform;
+        }
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
         //Determines the differnt camera following techniques depending on the dampening distance given
         if (Vector2.Distance(transform.position, target.position) >= dampDistance)
         {
@@ -54,7 +68,6 @@ public class CameraController : MonoBehaviour
         {
             this.transform.position = Vector2.Lerp(transform.position, target.position, smoothSpeed * Time.deltaTime);
         }
-        
     }
 
     public void Shake()
